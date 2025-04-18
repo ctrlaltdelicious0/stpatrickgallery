@@ -20,7 +20,6 @@ requestAnimationFrame(raf);
 
 FlexMasonry.init('.grid', {
     responsive: true,
-    numCols: 4,
 });
 
 // ==================== LIGHTBOX
