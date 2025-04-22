@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>St. Patrick Gallery</title>
+        <title>St. Patrick / Messages</title>
 
         <!-- RESOURCE HINTS -->
         <link rel="preconnect" href="https://unpkg.com">
@@ -13,22 +13,19 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="css/lightbox.css">
+        <link rel="stylesheet" href="css/messages.css">
         <link rel="stylesheet" href="css/header.css">
 
         <!-- LIBRARIES -->
         
-            <!-- FLEX MASONRY -->
-            <link rel="stylesheet" href="https://unpkg.com/flexmasonry/dist/flexmasonry.css">
-            <script src="https://unpkg.com/flexmasonry/dist/flexmasonry.js" defer></script>
-
             <!-- LENIS -->
             <link rel="stylesheet" href="https://unpkg.com/lenis@1.2.3/dist/lenis.css">
             <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js" defer></script>
 
-            <!-- VANILLA TILT -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js" defer></script>
+            <!-- PHOSPOR ICONS -->
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css" />
+            <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
 
         <!-- JS -->
         <script src="js/lenis.js" defer></script>
@@ -51,5 +48,30 @@
 
             <hr>
         </header>
+
+        <main>
+            <section class="message_list_container">
+                <a href="messages/sir_warren.html" class="message_a">
+                    <div class="message_item">
+                        <i class="ph ph-envelope"></i>
+                        <p class="message_p">From: Sir Warren</p>
+                    </div>
+                </a>
+
+                <a href="messages/sir_karch.html" class="message_a">
+                    <div class="message_item">
+                        <i class="ph ph-envelope"></i>
+                        <p class="message_p">From: Sir Karch</p>
+                    </div>
+                </a>
+
+                <a href="messages/joshua.html" class="message_a">
+                    <div class="message_item">
+                        <i class="ph ph-envelope"></i>
+                        <p class="message_p">From: Joshua</p>
+                    </div>
+                </a>
+            </section>
+        </main>
     </body>
 </html>

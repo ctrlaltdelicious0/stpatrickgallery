@@ -30,3 +30,9 @@ hr {
     color: #949494;
     font-family: "Inter", serif;
 }
+
+@media (max-width: 768px) {
+    hr {
+        width: 50%;
+    }
+}
