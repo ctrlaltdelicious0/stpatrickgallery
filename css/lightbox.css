@@ -35,14 +35,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Add space for tilt effect to avoid cutoff */
+    padding: 20px;
 }
 
 .lightbox-image {
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 90%;
+    max-width: 90%;
     object-fit: contain;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    /* Add a subtle background to make glare effect more visible */
+    background-color: rgba(255, 255, 255, 0.02);
+    /* Transform-style is needed for proper tilt effects */
+    transform-style: preserve-3d;
+    /* Add space for tilt effect to avoid cutoff */
+    margin: 5%;
+}
+
+/* VanillaTilt adds .js-tilt-glare elements */
+.js-tilt-glare {
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .lightbox-close {
@@ -112,8 +126,17 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .lightbox-content {
-        width: 90%;
+        width: 95%;
         height: 70%;
+    }
+    
+    .lightbox-image-container {
+        padding: 10px;
+    }
+    
+    .lightbox-image {
+        max-height: 85%;
+        max-width: 85%;
     }
     
     .lightbox-prev,
