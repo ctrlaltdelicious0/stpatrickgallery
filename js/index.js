@@ -27,7 +27,7 @@ function createLightbox() {
         </div>
     `;
     document.body.appendChild(lightbox);
-    
+
     return {
         lightbox: lightbox,
         image: lightbox.querySelector('.lightbox-image'),
@@ -47,7 +47,7 @@ function initLightbox() {
     const elements = createLightbox();
     const galleryImages = document.querySelectorAll('.grid-item img');
     let currentIndex = 0;
-    
+
     // Initialize tilt effect
     function initTiltEffect() {
         // Destroy any existing tilt instance first
@@ -55,7 +55,7 @@ function initLightbox() {
             tiltInstance.destroy();
             tiltInstance = null;
         }
-        
+
         // Initialize new tilt on the current image
         tiltInstance = VanillaTilt.init(elements.image, {
             max: 5,          // max tilt rotation (degrees)
@@ -71,55 +71,55 @@ function initLightbox() {
             gyroscopeMaxAngleY: 10     // this is the top limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the bottom border of the element
         });
     }
-    
+
     // Update lightbox with current image
     function updateLightbox(index) {
         currentIndex = index;
         elements.image.src = galleryImages[index].src;
         elements.image.alt = galleryImages[index].alt || `Gallery image ${index + 1}`;
         elements.counter.textContent = `${index + 1} / ${galleryImages.length}`;
-        
+
         // Enable/disable navigation buttons based on current position
         elements.prevBtn.style.visibility = index === 0 ? 'hidden' : 'visible';
         elements.nextBtn.style.visibility = index === galleryImages.length - 1 ? 'hidden' : 'visible';
-        
+
         // Add a small delay before initializing tilt to ensure the image has loaded
         setTimeout(initTiltEffect, 100);
     }
-    
+
     // Open lightbox with clicked image
     galleryImages.forEach((img, index) => {
         // Add loading="lazy" to all gallery images for better performance
         img.loading = 'lazy';
-        
+
         img.addEventListener('click', () => {
             elements.lightbox.classList.add('active');
             lenis.stop(); // Disable smooth scrolling when lightbox is open
             updateLightbox(index);
         });
     });
-    
+
     // Close lightbox
     elements.closeBtn.addEventListener('click', () => {
         closeLightbox();
     });
-    
+
     // Function to close lightbox and clean up
     function closeLightbox() {
         elements.lightbox.classList.remove('active');
         lenis.start(); // Re-enable smooth scrolling
-        
+
         // Destroy tilt instance when closing lightbox
         if (tiltInstance) {
             tiltInstance.destroy();
             tiltInstance = null;
         }
     }
-    
+
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (!elements.lightbox.classList.contains('active')) return;
-        
+
         if (e.key === 'Escape') {
             closeLightbox();
         } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
@@ -128,21 +128,21 @@ function initLightbox() {
             updateLightbox(currentIndex + 1);
         }
     });
-    
+
     // Previous image button
     elements.prevBtn.addEventListener('click', () => {
         if (currentIndex > 0) {
             updateLightbox(currentIndex - 1);
         }
     });
-    
+
     // Next image button
     elements.nextBtn.addEventListener('click', () => {
         if (currentIndex < galleryImages.length - 1) {
             updateLightbox(currentIndex + 1);
         }
     });
-    
+
     // Close when clicking outside the image
     elements.lightbox.addEventListener('click', (e) => {
         if (e.target === elements.lightbox) {
