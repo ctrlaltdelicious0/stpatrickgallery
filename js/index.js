@@ -17,7 +17,7 @@ if (window.innerWidth > 768) { // Adjust the width breakpoint as needed
         y: 50,
         duration: 1,
         stagger: {
-            each: 0.02,
+            each: 0.03,
             from: "start"
         },
         ease: "power2.out"
