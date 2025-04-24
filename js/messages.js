@@ -3,6 +3,8 @@
 // Check if JavaScript is loaded
 console.log('messages.js loaded');
 
+// ==================== ANIMATIONS
+
 gsap.from(".message_a", {
     opacity: 0,
     y: 50,
