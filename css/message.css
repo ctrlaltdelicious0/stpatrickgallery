@@ -1,0 +1,24 @@
+main {
+    padding: 10vh 30vw;
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.p_indent {
+    text-indent: 70px;
+}
+
+.p_author {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 10vh 20px;
+    }
+}
