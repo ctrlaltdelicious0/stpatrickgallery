@@ -1,3 +1,13 @@
+.preloader {
+    background-color: #101010;
+    pointer-events: none;
+    position: fixed;
+    width: 100vw;
+    height: 125vh;
+    border-bottom-left-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+}
+
 main {
     padding: 10vh 30vw;
 }
@@ -20,5 +30,10 @@ p {
 @media (max-width: 768px) {
     main {
         padding: 10vh 20px;
+    }
+    
+    .preloader {
+        border-bottom-left-radius: 50% 5%;
+    border-bottom-right-radius: 50% 5%;
     }
 }
