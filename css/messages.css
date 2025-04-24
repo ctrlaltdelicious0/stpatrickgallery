@@ -37,5 +37,14 @@ main {
 }
 
 footer {
-    height: 10vh;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_text {
+    font-weight: 100;
+    font-family: "Inter", sans-serif;
+    opacity: 0.3;
 }
