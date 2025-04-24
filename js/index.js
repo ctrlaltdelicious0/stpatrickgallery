@@ -9,6 +9,21 @@ FlexMasonry.init('.grid', {
     responsive: true,
 });
 
+// ==================== ANIMATIONS
+
+if (window.innerWidth > 768) { // Adjust the width breakpoint as needed
+    gsap.from(".grid-item", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: {
+            each: 0.02,
+            from: "start"
+        },
+        ease: "power2.out"
+    });
+}
+
 // ==================== LIGHTBOX
 
 // Create lightbox elements
